@@ -1,0 +1,32 @@
+<div id="gallery_header">
+    <div id="navigation_button_container">
+        <a id="navigation_button" href="/canvas">Canvas</a>
+    </div>
+    <form method="POST" action="/logout" id="logout_container">
+        <button id="logout">Logout</button>
+    </form>
+</div>
+<div id="gallery_images_container">
+    {{#each images}}
+    <div id="image_wrapper">
+        <div id="image_artist_container">
+            <span id="image_artist_name">
+                <p>Artist: </p>
+                <p>{{this.username}}</p>
+            </span>
+        </div>
+        {{!-- <div id="image_artist_container">
+            <span id="original_image_artist_name">Orginal Artist: <p>{{this.parent_id}}</p></span>
+        </div> --}}
+        <img class="gallery" src="/gallery/{{this.id}}{{this.extensions}}" />
+        <div id="displayed_image_bottom_wrapper">
+            <div id="image_genre_type_container">
+                <span id="image_genre_type">Genre: {{this.genre}}</span>
+            </div>
+            <div id="mix_image_container">
+                <a id="mix_image" href="/remix/{{this.id}}">Remix</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

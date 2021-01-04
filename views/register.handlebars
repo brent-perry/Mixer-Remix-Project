@@ -1,0 +1,27 @@
+<div id="register_form_container">
+    <div id="register_form_wrapper">
+        <form id="register_form" method="post" autocomplete="off">
+            <input type="username" name="username" placeholder="Username" value="{{username}}" />
+            <input type="email" name="email" placeholder="Email" value="{{email}}" />
+            <input type="password" name="password" placeholder="Password" value="{{password}}" />
+            <input type="password" name="confirm_password" placeholder="Confirm Password"
+                value="{{confirm_password}}" />
+            <button id="main_register_button" type="submit">Register</button>
+            <button id="already_registered_button"><a href="/login">Already Registered?</a></button>
+        </form>
+        <div id="invalid_register_container">
+            {{#if email_taken}}
+            <p id="invalid_message">email taken</p>
+            {{/if}}
+            {{#if username_taken}}
+            <p id="invalid_message">username taken</p>
+            {{/if}}
+            {{#if passwords_dont_match}}
+            <p id="invalid_message">passwords dont match</p>
+            {{/if}}
+            {{#if all_fields_requied}}
+            <p id="invalid_message">all fields required</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

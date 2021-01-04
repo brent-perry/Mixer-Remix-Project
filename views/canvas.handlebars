@@ -1,0 +1,106 @@
+<div id="master_canvas_container">
+    <div id="gallery_button_container">
+        <div id="new_gallery_button_wrapper">
+            <a id="new_button" href="/canvas">+New Project</a>
+            <a id="gallery_button" href="/gallery">Gallery</a>
+        </div>
+    </div>
+    <div id="icons_wrapper">
+        <div id="icons_container">
+            <span id="upload_gallery">
+                <div class="icon_hovers">Post</div>
+            </span>
+            <label id="upload_image">
+                <input type="file" id="chosen_image_file" name="import" accept="image/png,image/jpeg">
+                <div class="icon_hovers">Upload</div>
+            </label>
+        </div>
+    </div>
+    <div id="logout_container">
+        <form method="POST" action="/logout" id="logout_button">
+            <button id="logout">Logout</button>
+        </form>
+    </div>
+    <div id="side_bars_wrapper">
+        <div id="tool_bar_wrapper">
+            <div id="hide_tools">X</div>
+            <div id="tool_bar_container">
+                <div class="custom_choose_select_wrapper">
+                    <div class="custom_choose_select">
+                        <div class="custom_choose_select_trigger">
+                            <span id="selected_choose_option">Choose a Genre</span>
+                            <div class="choose_arrow"></div>
+                        </div>
+                        <div class="custom_choose_options">
+                            <span class="custom_choose_option" data-value="Animals">Animals</span>
+                            <span class="custom_choose_option" data-value="Vehicles">Vehicles</span>
+                            <span class="custom_choose_option" data-value="Landscape">Landscape</span>
+                            <span class="custom_choose_option" data-value="People">People</span>
+                            <span class="custom_choose_option selected" data-value="Other">Other</span>
+                            <span class="custom_choose_option" data-value="Funny">Funny</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="tool_bar">
+                    <div id="eraser_size_container">
+                        <input type="range" id="eraser_size_slider" value="5" min="1" max="30">
+                    </div>
+                    <div id="main_color_wrapper">
+                        <div class="color_info">
+                            <div class="selected_color"></div>
+                        </div>
+                        <div class="picker_container">
+                            <canvas id="color_picker"></canvas>
+                        </div>
+                    </div>
+                    <div id="brush_size_container">
+                        <input type="range" id="brush_size_slider" value="5" min="1" max="30">
+                    </div>
+                    <span id="undo">
+                        <div class="icon_hovers">Undo</div>
+                    </span>
+                    <span id="rotate">
+                        <div class="icon_hovers">Rotate</div>
+                    </span>
+                    <span id="clear">
+                        <div class="icon_hovers">Clear</div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="search_genre_wrapper">
+            <div id="hide_search">X</div>
+            <div id="search_genre_container">
+                <div id="search_genre">
+                    <div class="custom_search_select_wrapper">
+                        <div class="custom_search_select">
+                            <div class="custom_search_select_trigger"><span id="selected_search_option">Search a
+                                    Genre</span>
+                                <div class="search_arrow"></div>
+                            </div>
+                            <div class="custom_search_options">
+                                <span class="custom_search_option" data-value="animals">Animals</span>
+                                <span class="custom_search_option" data-value="vehicles">Vehicles</span>
+                                <span class="custom_search_option" data-value="landscape">Landscape</span>
+                                <span class="custom_search_option" data-value="people">People</span>
+                                <span class="custom_search_option selected" data-value="other">Other</span>
+                                <span class="custom_search_option" data-value="funny">Funny</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="search_genre_imgs_container">
+                        <a href="#" class="search_genre_imgs"></a>
+                        <a href="#" class="search_genre_imgs"></a>
+                        <a href="#" class="search_genre_imgs"></a>
+                    </div>
+                    {{!-- <button id="more_genre_button">More</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="canvas_container">
+        <canvas data-image-id="{{remixId}}" data-image-source-url="{{remixURL}}" id="canvas" width="800"
+            height="500"></canvas>
+    </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div id="login_form_container">
+    <div id="login_form_wrapper">
+        <form id="login_form" method="post" autocomplete="off">
+            <input type="username" name="username" placeholder="Username" value="{{username}}" />
+            <input type="password" placeholder="Password" name="password" />
+            <button id="main_login_button" type="submit">Login</button>
+            <button id="not_registered_button"><a href="/register">Not Registered?</a></button>
+        </form>
+        <div id="invalid_login_container">
+            {{#if missingInfo}}
+            <p id="invalid_message">both fields required</p>
+            {{/if}}
+            {{#if invalidCredentials}}
+            <p id="invalid_message">invalid credentials</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
